@@ -1,0 +1,118 @@
+﻿@model Final_Project.Models.User
+
+<head>
+    <title></title>
+    <style>
+        /*body {
+         
+            margin-left: 100px;
+            margin-right:100px;
+        
+            background-color:green;
+        }*/
+        .dt-sc-tabs-content{
+            padding-left:150px;
+        }
+    </style>
+</head>
+<html>
+<body>
+    <!--wrapper starts-->
+    <div class="wrapper">
+        <!--header starts-->
+        <!--header ends-->
+        <!--main starts-->
+        <div id="main">
+            <!--breadcrumb-section starts-->
+            @*<div class="breadcrumb-section">
+                <div class="container">
+                    <h1>Login Or Register</h1>
+                </div>
+            </div>*@
+            <!--breadcrumb-section ends-->
+            <!--container starts-->
+            <div class="container">
+                <!--primary starts-->
+                <section id="primary" class="content-full-width">
+
+                    <!--dt-sc-one-half starts-->
+                    <div class="column dt-sc-one-half first">
+                        @*<h2>Horizontal Tabs</h2>*@
+                        <!--dt-sc-tabs-container starts-->
+                        <div class="dt-sc-tabs-container">
+                            <ul class="dt-sc-tabs">
+                                <li><a href=""> Login </a></li>
+                                @*<li><a href="tabs-toggles.html#"> Register </a></li>*@
+
+                            </ul>
+
+                            <div class="dt-sc-tabs-content">
+                                @using (Html.BeginForm("loginconfirm", "Account", FormMethod.Post))
+{
+    @Html.ValidationSummary(true, "Login faild ,check your login details")
+    {
+
+
+        <h2>Username</h2>
+        @Html.EditorFor(model => model.UserName, new { @class = "text" })
+        <h2>Password</h2>
+        @Html.EditorFor(model => model.Password, new { @class = "column dt-sc-one-third first", onblur = "if (this.value == '') {this.value = 'PASSWORD';" })
+        <div class="submit-five">
+            <input type="submit" value="LOG IN">
+        </div>
+    }
+}
+                            </div>
+                            @*<div class="dt-sc-tabs-content">
+                                Register...............
+                            </div>*@
+                        </div>
+                        <!--dt-sc-tabs-container ends-->
+                    </div>
+                    <!--dt-sc-one-half ends-->
+                    <!--dt-sc-one-half starts-->
+
+                    @*<div class="column dt-sc-one-half">
+                        <h2>Vertical Tabs</h2>
+                        <!--dt-sc-tabs-vertical-container starts-->
+                        <div class="dt-sc-tabs-vertical-container">
+                            <ul class="dt-sc-tabs-vertical-frame">
+                                <li><a href="tabs-toggles.html#"> Tab 1 </a></li>
+                                <li><a href="tabs-toggles.html#"> Tab 2 </a></li>
+                                <li><a href="tabs-toggles.html#"> Tab 3 </a></li>
+                            </ul>
+                            <div class="dt-sc-tabs-vertical-frame-content">
+                                Tab 1
+                            </div>
+                            <div class="dt-sc-tabs-vertical-frame-content">
+                                Tab 2
+                            </div>
+                            <div class="dt-sc-tabs-vertical-frame-content">
+                                Tab 3
+                            </div>
+                        </div>
+                        <!--dt-sc-tabs-vertical-container ends-->
+                    </div>*@
+                    <!--dt-sc-one-half ends-->
+
+                    @*<div class="dt-sc-hr"></div>*@
+
+                    <!--dt-sc-one-half starts-->
+                    <!--dt-sc-one-half ends-->
+
+                </section>
+                <!--primary ends-->
+            </div>
+            <!--container ends-->
+        </div>
+        <!--main ends-->
+        <!--footer starts-->
+        <!--footer ends-->
+
+    </div>
+    <!--wrapper ends-->
+
+</body>
+</html>
+
+.............

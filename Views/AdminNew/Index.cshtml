@@ -1,0 +1,159 @@
+﻿@model IEnumerable<Final_Project.Models.User>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<head>
+    <title>
+
+    </title>
+    <style>
+        .table1 {
+            padding-left: 50px;
+        }
+
+        table {
+            padding: 30px;
+        }
+
+        .td1 {
+            padding-left: 90px;
+            padding-top: 15px;
+        }
+
+        hr {
+            color: black;
+        }
+
+        h1 {
+            padding-left: 70px;
+        }
+
+        h2 {
+            padding-left: 70px;
+        }
+
+        .div2 {
+            padding-top: 20px;
+        }
+        .p2{
+            padding-left:90px;
+
+        }
+        .p1 {
+            padding-top: 200px;
+            text-align: center;
+            font-size: 50px;
+        }
+
+        .div3 {
+            padding-left: 90px;
+        }
+    </style>
+</head>
+
+
+<p class="p1">
+    Admin Panel
+</p>
+<hr />
+
+<div class="div3">
+    <h3>Upload Data</h3>
+    @*<form action="/UploadData/Upload" method="post" enctype="multipart/form-data">
+
+        <input type="file" name="movie" />
+        <input type="submit" value="Upload" />
+    </form>*@
+    <a href="@Url.Action("UploadData", "UploadData")" class="dt-sc-button medium">Upload Page</a>
+
+    @*@Html.ActionLink("UploadData", "UploadData")*@
+</div>
+<hr />
+
+
+
+
+
+
+<p class="p2">
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+
+<table>
+    <tr>
+        <td>
+            U_id
+        </td>
+        <td>
+            UserName
+        </td>
+        <td>
+            Password
+        </td>
+        <td>
+            Role
+        </td>
+
+    </tr>
+
+    @foreach(var s in Model)
+    {
+        <tr>
+            <td>@s.U_Id</td>
+            <td>@s.UserName</td>
+            <td>@s.Password</td>
+            <td>@s.Role</td>
+
+            <td>
+                <a href="/adminNew/DeleteNew/@s.U_Id">Delete</a>
+                <a href="/adminNew/Update/@s.U_Id">Update</a>
+            </td>
+        </tr>
+    }
+    </table>
+
+
+@*<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.U_Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Role)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.U_Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Role)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}*@
+
+</table>

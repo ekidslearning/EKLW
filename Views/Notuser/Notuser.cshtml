@@ -1,0 +1,107 @@
+﻿@model Final_Project.Models.Reg_User
+<html lang="en-gb" class="no-js"> <!--<![endif]-->
+<head>
+    <title></title>
+<meta http-equiv="content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> 
+    <style>
+        .p1 {
+            padding-top:10px;
+        }
+        .adm {
+            padding-top:10px;
+        }
+        .p1{
+            color:white;
+        }
+        .p2{
+            color:white;
+        }
+        .div1 {
+            width:200px;
+            float:left;
+        }
+        .div2 {
+            width:250px;
+            float:left;
+            padding-left:50px;
+        }
+        .divmain {
+            margin:auto;
+            width:960px;
+        }
+        .pas {
+          line-height:15px;
+        }
+    </style>
+</head>
+<body class="main">
+	<!--wrapper starts-->
+    <div class="wrapper">
+        <!--header starts-->
+        <!--header ends-->
+        <!--main starts-->
+        <div id="main">
+            <section class="fullwidth-background turquoise-plain-bg">
+                        <!--container starts-->
+                        <div class="container"> 
+                        	<h2 class="dt-sc-hr-white-title">Register or Login</h2> 
+                        
+                            
+                            <div class="divmain">
+                                 <div class="div1">
+                        @using (Html.BeginForm("Register", "SignupForm", FormMethod.Post))
+                        {
+                             @Html.AntiForgeryToken()
+                           
+                                <h2 class="dt-sc-hr-white-title">Register </h2> 
+                        
+                            <p class="p1"> Username
+                            @Html.EditorFor(m=>m.Username)
+                                </p>
+                            <p class="p2">Password
+                            @Html.EditorFor(m => m.Password, new { @class = "pas" })
+                                </p>
+                            <p class="p2">Confirm Password
+                            @Html.EditorFor(m=>m.Conpassword)
+                                </p>
+                            <p class="p1">Email
+                            @Html.EditorFor(m=>m.Email)
+                                </p>
+                            <input type="submit" value="Register" />
+                        }
+                             </div>
+                            
+                            <div class="div2">
+                                  @using (Html.BeginForm("loginconfirm", "Account", FormMethod.Post))
+                        {
+                         
+                                <h2 class="dt-sc-hr-white-title">Login </h2> 
+                        
+                                 <p class="p1"> Username
+                            @Html.EditorFor(m=>m.Username)
+                                </p>
+                            <p class="p2">
+                            @Html.EditorFor(m=>m.Password)
+                                </p>
+                           
+                                      <input type="submit" value="Login" />
+                                  }
+                            </div>
+                                </div>
+                        }
+                        </div>
+                        <!--container ends-->
+                    </section>
+        </div>
+        <!--main ends-->
+        
+        <!--footer starts-->
+        <!--footer ends-->
+        
+    </div>
+    <!--wrapper ends-->
+    <a href="services.html" title="Go to Top" class="back-to-top">To Top ↑</a>
+    <!--Java Scripts-->
+</body>
+</html>

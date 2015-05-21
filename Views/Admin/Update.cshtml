@@ -1,0 +1,69 @@
+﻿@model Final_Project.Models.User
+
+
+@{
+    ViewBag.Title="update";
+}
+
+<style>
+    h2 {
+        padding-left: 30px;
+    }
+
+    .for {
+        padding-left: 30px;
+        background-color: coral;
+    }
+</style>
+
+
+<div class="for">
+    <h2>Update</h2>
+
+<form action="/Admin/updateconfirm/@Model.U_Id" method="post">
+<table>   
+    <tr>
+        <td>
+Name: <br/> <input type="text" name="Name" value="@Model.UserName"/>
+            </td>
+        </tr>
+    <tr>
+        <td>
+Password: <br/> <input type="text" name="Password" value="@Model.Password"/>
+            </td>
+        </tr>
+    <tr>
+        <td>
+<input type="submit" value="UPDATE"/>
+            </td>
+
+        </tr>
+        </table>
+</form>
+
+
+    </div>
+@*<form action="/Home/userlogin" method="post">
+    <table>
+        <tr>
+
+            <td>
+                <strong>ID:</strong><br /> <input type="text" name="Name" />
+                <hr />
+            </td>
+        </tr>
+
+        <tr>
+            <td id="td2">
+                <strong> Password:</strong><br /><input type="text" name="password" />
+                <hr />
+            </td>
+        </tr>
+        <tr>
+            <td id="td2"><input type="submit" value="Login" /></td>
+        </tr>
+        <h4>@ViewBag.Msg </h4>
+
+        </tr>
+    </table>
+</form>*@

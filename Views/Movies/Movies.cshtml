@@ -1,0 +1,111 @@
+﻿@model List<Final_Project.Models.Movy>
+@{
+    ViewBag.Title = "Movies";
+}
+<script src="~/Scripts/jquery-1.7.1.js"></script>
+
+
+
+
+<script>
+
+
+
+    $(document).ready(function () {
+     
+        $('.my').click(function () {
+            var id1 = $(this).data('id');
+
+            $.ajax({
+                type: "POST",
+                url: "/Home/Address",
+                data: { id: id1 },
+                success: function OnSuccess(response) {
+                    $("#img").attr({
+                        "src": response,
+                    });
+                    //document.getElementById("demo").innerHTML = "<img src="+response+"\>";
+                    alert(response);
+
+                }
+
+            });
+        });s
+
+
+            //var answer = x.options[x.selectedIndex].innerHTML;
+
+            //var z = document.getElementById("a1").value;
+
+            //var y = document.getElementById("accountno");
+            //var answer1 = y.options[y.selectedIndex].innerHTML;
+            //if (document.getElementById('Payee').checked == true) {
+            //    var x = document.getElementById("DropDown");
+            //    var answer = x.options[x.selectedIndex].innerHTML;
+            //}
+            //else {
+            //    var answer = document.getElementById("Field").value;
+            //}
+
+            //if (answer1 == "    ----     Select Your Account    ----  " | (answer == "    ----     Select Payee Account    ----  " | answer == '') | z == '') {
+            //    document.getElementById("demo").innerHTML = "<label>Kindly Fill All Fields</label>";
+            //    document.getElementsByTagName("label")[5].style.color = "red";
+            //    document.getElementById('trans').style.visibility = "hidden";
+            //}
+
+            //else {
+            //    document.getElementById("demo").innerHTML = "<h3>Kindly Confirm The details </h3> <label>Account No </label>&nbsp; &nbsp;" + answer1 + "</br><label>Amount </label>&nbsp; &nbsp; " + z + "</br><label>Destination Account No </label>&nbsp;" + answer;
+
+            //    document.getElementById('trans').style.visibility = "visible";
+
+            //}
+
+
+           
+    });
+
+</script>
+
+<h2>Movies</h2>
+
+<table>
+    <tr>
+        <td>
+            M_id
+        </td>
+        <td>
+            MovieName
+        </td>
+
+    </tr>
+
+    @foreach (var s in Model)
+    {
+        <tr>
+            <td>@s.M_Id</td>
+            @*<td>@s.Movie1</td>*@
+            <td><a href="@s.Movie" id="btn" @*data-id="@s.M_Id" data-toggle="modal" data-target=".bs-example-modal-sm" class="my"*@>@s.M_Id</a></td>
+
+            @*<td>
+                <a href="/adminNew/DeleteNew/@s.U_Id">Delete</a>
+                <a href="/adminNew/Update/@s.U_Id">Update</a>
+            </td>*@
+        </tr>
+    }
+   
+   
+</table>
+@*<img src="~/Movies/12.gif" />
+
+<div class="modal fade bs-example-modal-sm" tabindex="-3" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content" style="padding:10px">
+            <div id="demo"> <embed id="img" src='' /></div>
+
+            <div class="modal-footer" id="modal-footer">
+                <input type="submit" value="Transfer" id="trans" class="btn btn-primary" />
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>*@

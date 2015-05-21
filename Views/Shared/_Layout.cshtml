@@ -1,0 +1,279 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    
+    <style>
+        .si{
+           
+            padding-right:300px;
+
+        }
+        .logo {
+            padding-top:5px;
+        }
+        body{
+            margin-left:100px;
+        }
+    </style>
+
+
+
+
+<script>
+
+
+    var playerinstance = bgaudioplayer({
+        audioid: 'mybgplayer', // id of audio element
+        audiointerface: 'mybgplayerui', // id of corresponding UI div
+        autoplay: true, // auto play music?
+        persistTimeLine: true, // Persist player's current timeline/ volume when moving from page to page?
+        volume: 1.0, // Default volume (0.0 to 1.0)
+        volumelevels: 10// # of volume bars to show in UI
+    })
+
+</script>    <link href="~/Content/bgaudioplayer.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.js"></script>
+    
+
+    <script src="~/Scripts/jquery.js"></script>
+
+    <link rel="shortcut icon" href="~/Images/favicon.ico" type="image/x-icon" />
+<link href="~/Content/style.css" rel="stylesheet" type="text/css">
+<link href="~/Content/shortcodes.css" rel="stylesheet" type="text/css">
+<link href="~/Content/responsive.css" rel="stylesheet" type="text/css">
+<link href="~/Content/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link rel='stylesheet' id='layerslider-css' href="~/Content/layerslider.css" type='text/css' media='all' />
+<!--prettyPhoto-->
+<link href="~/Content/prettyPhoto.css" rel="stylesheet" type="text/css" media="all" />   
+<!--[if IE 7]>
+<link href="css/font-awesome-ie7.css" rel="stylesheet" type="text/css">
+<![endif]-->
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<!--Fonts-->
+<link href='~/Content/css.css' rel='stylesheet' type='text/css'>
+<link href='~/Content/css_2.css' rel='stylesheet' type='text/css'>
+<link href='~/Content/css_3.css' rel='stylesheet' type='text/css'>
+<!--jquery-->
+<script src="~/Scripts/modernizr-2.6.2.min.js"></script>
+    
+    <script type="text/javascript" src="~/Scripts/jquery.js"></script>
+	<script type="text/javascript" src="~/Scripts/jquery-migrate.min.js"></script>
+
+   
+	<script type="text/javascript" src="~/Scripts/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="~/Scripts/jquery-easing-1.3.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.sticky.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.nicescroll.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.inview.js"></script>
+    <script type="text/javascript" src="~/Scripts/validation.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.tipTip.minified.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.bxslider.min.js"></script>       
+    <script type="text/javascript" src="~/Scripts/jquery.prettyPhoto.js"></script>  
+    <script type="text/javascript" src="~/Scripts/jquery.tweet.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.parallax-1.1.3.js"></script>   
+    <script type="text/javascript" src="~/Scripts/shortcodes.js"></script>   
+    <script type="text/javascript" src="~/Scripts/custom.js"></script>
+    
+    <!-- Layer Slider --> 
+    <script type="text/javascript" src="~/Scripts/jquery-transit-modified.js"></script> 
+    <script type="text/javascript" src="~/Scripts/layerslider.kreaturamedia.jquery.js"></script> 
+    <script type='text/javascript' src="~/Scripts/greensock.js"></script> 
+    <script type='text/javascript' src="~/Scripts/layerslider.transitions.js"></script> 
+    <!--<script type="text/javascript">var lsjQuery = jQuery;</script>--> 
+
+    @*<link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.js"></script>*@
+    <script src="~/Scripts/bgaudioplayer.js"></script>
+
+   
+    <script type="text/javascript">var lsjQuery = jQuery;</script><script type="text/javascript">        lsjQuery(document).ready(function () { if (typeof lsjQuery.fn.layerSlider == "undefined") { lsShowNotice('layerslider_1', 'jquery'); } else { lsjQuery("#layerslider_4").layerSlider({ responsiveUnder: 1170, layersContainer: 1170, skinsPath: 'js/layerslider/skins/' }) } }); </script>
+    
+
+
+
+</head>
+<body>
+     <header>
+            <div class="container">
+                <div class="logo">
+                    <a href="@Url.Action("Index", "Home")"><img src="~/Images/lg.gif" alt="Kids Life" title="Kids Life"/></a>
+                </div>
+                <div class="contact-details">
+                    <p class="mail">
+                        @*<a href="index.html#">contact@kidslife.com</a>*@
+                        
+                        @if (Session["loggedin"] ==null)
+                        {
+                        
+                        <a href="@Url.Action("LoginForm", "LoginForm")" class="dt-sc-button medium">LOGIN</a>
+                       
+                        
+                        
+                         <a href="@Url.Action("SignupForm", "SignupForm")" class="dt-sc-button medium pink">Sign-Up</a>
+                        }
+                        @* ............login.......................... *@
+                         @if (Session["loggedin"] != null)
+                {
+                    using (Html.BeginForm("logout", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                    {
+                        <input type="submit" value="LOGOUT" />
+                    }
+                    }
+                    
+                      @*@if (Session["loggedin"] != null)
+                {
+                  <p> Welcome</p> <h2>@Model.UserName</h2>
+                    }*@
+                        @* ............login.......................... *@
+                         @* <span class="fa fa-envelope"></span>*@
+					</p>
+                    <p class="phone-no">
+                       @* <i>+1 959 552 5963</i>
+                        <span class="fa fa-phone"></span>*@
+                	</p>        
+                </div>
+            </div>
+            <!--menu-container starts-->
+            <div id="menu-container">
+                <div class="container">
+                    <!--nav starts-->
+                    <nav id="main-menu">
+                    	<div class="dt-menu-toggle" id="dt-menu-toggle">Menu<span class="dt-menu-toggle-icon"></span></div>
+                        <ul id="menu-main-menu" class="menu">
+                            <li class="current_page_item menu-item-simple-parent menu-item-depth-0 red"> <a href="@Url.Action("Index", "Home")"> Home </a> 
+                                @*<ul class="sub-menu">
+                                    <li> <a href="index.html#"> Submenu Level I </a> </li>
+                                    <li> <a href="index.html#"> Submenu Level I </a>  </li>
+                                    <li> <a href="index.html#"> Submenu Level I </a> </li>
+                                    <li> <a href="index.html#"> Submenu Level I </a> </li>
+                                    <li> <a href="index.html#"> Submenu Level I </a> 
+                                        <ul class="sub-menu">
+                                            <li> <a href="index.html#"> Submenu Level II </a> </li>
+                                            <li> <a href="index.html#"> Submenu Level II </a> </li>
+                                            <li> <a href="index.html#"> Submenu Level II </a>  </li>
+                                        </ul>   
+                                        <a class="dt-menu-expand">+</a>                             
+                                    </li>
+                                </ul> *@ 
+                                <a class="dt-menu-expand">+</a>                      
+                            </li>
+                           @* <li class="mustard"> <a href="@Url.Action("About", "About")"> About us </a> </li>
+                  *@          <li class="green"> <a href="@Url.Action("OurServices", "OurServices")"> Our Services </a> </li>
+                            <li class="yellow"> <a href="@Url.Action("Parent", "Services")"> Parents </a> </li>
+                         <li class="yellow"> <a href="@Url.Action("Gallery", "Gallery")"> Gallery </a> </li>
+                         
+                               @*<li class="menu-item-simple-parent menu-item-depth-0 blue"><a href="portfolio-four-column.html" title="">Portfolio</a>
+                                <ul class="sub-menu">
+                                    <li><a href="portfolio-four-column.html">Portfolio Four Column</a></li>
+                                    <li><a href="portfolio-three-column.html">Portfolio Three Column</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="portfolio-three-column-with-sidebar.html">With Sidebar</a></li>
+                                        </ul>
+                                        <a class="dt-menu-expand">+</a>
+                                    </li>
+                                </ul>
+                                <a class="dt-menu-expand">+</a>
+                            </li>*@
+                            
+                            
+                            @*<li class="menu-item-simple-parent menu-item-depth-0 lavender"><a href="blog.html" title="">Blog</a>
+                                <ul class="sub-menu">
+                                    <li><a href="blog-two-column.html">Blog Two Column</a>
+                                    	<ul class="sub-menu">
+                                            <li><a href="blog-two-column-with-sidebar.html">With Sidebar</a></li>
+                                        </ul>
+                                        <a class="dt-menu-expand">+</a>
+                                    </li>
+                                    <li><a href="blog.html">Blog One Column</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="blog-with-sidebar.html">With Sidebar</a></li>
+                                        </ul>
+                                        <a class="dt-menu-expand">+</a>
+                                    </li>
+                                </ul>
+                                <a class="dt-menu-expand">+</a>
+                            </li>*@
+                           @* <li class="purple"><a href="shop.html" title="">Shop</a></li>*@
+                            <li class="pink"><a href="@Url.Action("Contact", "Contact")" title="">Contact us</a></li>
+
+
+                            <li class="play">
+                              @*   
+                                <audio id="mybgplayer">
+<source src="~/Music/1.mp3" type="audio/mp3">
+<source src="~/Music/1.mp3" type="audio/ogg">
+</audio>
+
+<!--Define corresponding audio interface. Certain CSS classes trigger changes to them-->
+
+<div id="mybgplayerui" class="bgplayerui">
+<img class="play" src="~/Images/p.png" data-pausesrc="~/Images/s.png" /> <img class="rewind" src="~/Images/r.jpg" style="position:relative; left:-4px" /> <div class="volume"></div>
+
+</div>*@
+
+
+  </li>
+
+
+
+
+                        </ul>
+                    </nav>
+                    <!--nav ends-->
+                   
+                                                            @* <form name="frcontact" class="contact-form" method="post" action="http://wedesignthemes.com/html/kidslife/php/contactmail.php">
+
+
+                                                <input id="name" name="txtname" type="text" placeholder="Name" required="">
+                                                <input id="email" name="txtemail" type="email" placeholder="Email ID" required="">
+        
+                                         </form>
+                    *@ @* <ul class="dt-sc-social-icons">
+                        <li><a href="index.html#" title="Facebook" class="dt-sc-tooltip-top facebook"><span class="fa fa-facebook"></span></a></li>
+                        <li><a href="index.html#" title="Youtube" class="dt-sc-tooltip-top youtube"><span class="fa fa-youtube"></span></a></li>
+                        <li><a href="index.html#" title="Twitter" class="dt-sc-tooltip-top twitter"><span class="fa fa-twitter"></span></a></li>
+                        <li><a href="index.html#" title="Google Plus" class="dt-sc-tooltip-top gplus"><span class="fa fa-google-plus"></span></a></li>
+                    </ul>*@
+                </div>
+            </div>
+            <!--menu-container ends-->
+        </header>
+    
+       
+    @RenderBody()
+
+
+    <footer>
+            <!--footer-widgets-wrapper starts-->
+            
+            <!--footer-widgets-wrapper ends-->  
+            <div class="copyright">
+        		<div class="container">
+                	<p class="copyright-info">© 2014 Effective Kids Learning Website. All rights reserved. @*<a href="buddhathemes.htm" target="_blank" title=""> Buddhathemes </a>*@</p>
+        			<div class="footer-links">
+                        <p>Follow us</p>
+                        <ul class="dt-sc-social-icons">
+                        	<li class="facebook"><a href="index.html#"><img src="~/Images/facebook.png" alt="" title=""></a></li>
+                            <li class="twitter"><a href="index.html#"><img src="~/Images/twitter.png" alt="" title=""></a></li>
+                            <li class="gplus"><a href="index.html#"><img src="~/Images/gplus.png" alt="" title=""></a></li>
+                            <li class="pinterest"><a href="index.html#"><img src="~/Images/pinterest.png" alt="" title=""></a></li>
+                        </ul>
+                    </div>
+        		</div>
+        	</div>  
+        </footer>
+
+
+@*    @Scripts.Render("~/bundles/jquery")
+
+    @RenderSection("scripts", required: false)*@
+</body>
+</html>

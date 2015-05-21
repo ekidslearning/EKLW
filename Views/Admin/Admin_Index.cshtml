@@ -1,0 +1,99 @@
+﻿@*@model ead_pro_new.Models.user*@
+
+@{
+    ViewBag.Title = "Admin";
+}
+<style>
+    .table1{
+        padding-left:50px;
+    }
+    table{
+        padding:30px;
+       
+    }
+    .td1{
+        padding-left:90px;
+        padding-top:15px;
+        
+    }
+    hr {
+       
+        color:black;
+    }
+    h1 {
+        padding-left:70px;
+    }
+    h2 {
+        padding-left:70px;
+    }
+    .div2 {
+        padding-top:20px;
+    }
+
+    .p1{
+
+padding-top:200px;   
+text-align:center;
+font-size:50px;
+    }
+    .div3 {
+        padding-left:90px;
+    }
+
+</style>
+
+
+<p class="p1">
+Admin Panel</p>
+<hr />
+
+<div class="div3">
+    <h3>Upload Movies</h3>
+<form action="/UploadData/Upload" method="post" enctype="multipart/form-data">
+  
+ <input type="file" name="movie" />
+     <input type="submit" value="Upload" />
+    </form>
+    <a href="@Url.Action("UploadData", "UploadData")" class="dt-sc-button medium">Upload Page</a>
+                       
+     @Html.ActionLink("UploadData", "UploadData")
+    </div>
+<hr />
+<div class="div2">
+
+<h1>Current User Details</h1>
+
+<div class="table1">
+<table>
+    <tr>
+        <td class="td1">User Id:</td>
+        <td class="td1">User Name:</td>
+        <td class="td1">Password:</td>
+        <td class="td1">Role </td>
+        
+    </tr>
+
+    @foreach (var s in Model)
+    {
+
+        <tr>
+            <td class="td1">@s.U_Id</td>
+            <td class="td1">@s.UserName</td>
+            <td class="td1">@s.Password</td>
+            <td class="td1">@s.Role</td>
+         @*   <td class="td1"><img src="@s.Image" height="300" width="200" alt="" /></td>*@
+
+            <td class="td1"> <a href="/Admin/Update/@s.U_Id"/>Update</td>
+            <td class="td1"> <a href="/Admin/Delete/@s.U_Id" />Delete</td>
+           
+        </tr>
+
+    }
+
+   
+</table>
+</div>
+    </div>
+<!----------uploading data-->
+ 
+

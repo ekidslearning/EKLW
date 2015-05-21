@@ -1,0 +1,34 @@
+﻿
+@model IEnumerable<Final_Project.Models.GK>
+@{
+    ViewBag.Title = "Admin_View_GK";
+}
+
+<h2>Admin_View_GK</h2>
+
+<table>
+    <tr>
+        <td>
+            GK_id
+        </td>
+        <td>
+            Name
+        </td>
+
+    </tr>
+
+    @foreach (var s in Model)
+    {
+        <tr>
+            <td>@s.GK_id</td>
+            <td>
+            <td><a href="@s.GK_file" id="btn" @*data-id="@s.M_Id" data-toggle="modal" data-target=".bs-example-modal-sm" class="my"*@>@s.GK_filename</a></td>
+
+
+            <td>
+                <a href="/adminNew/DeleteGK/@s.GK_id">Delete</a>
+                @*<a href="/adminNew/UpdateImage/@s.M_id">Update</a>*@
+            </td>
+        </tr>
+    }
+</table>

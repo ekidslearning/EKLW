@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Final_Project.Models.Image>
+@{
+    ViewBag.Title = "Admin_View_Images";
+}
+
+<h2>Admin_View_Images</h2>
+
+<table>
+    <tr>
+        <td>
+            M_id
+        </td>
+        <td>
+            ImageName
+        </td>
+
+    </tr>
+
+    @foreach (var s in Model)
+    {
+        <tr>
+            <td>@s.M_id</td>
+            <td><img src="@s.Image1" height="170" width="180"/></td>
+
+            <td>
+                <a href="/adminNew/DeleteImage/@s.M_id">Delete</a>
+                @*<a href="/adminNew/UpdateImage/@s.M_id">Update</a>*@
+            </td>
+        </tr>
+    }
+</table>

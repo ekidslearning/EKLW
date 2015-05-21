@@ -1,0 +1,37 @@
+﻿
+@model IEnumerable<Final_Project.Models.Art>
+@{
+    ViewBag.Title = "Admin_View_Movies";
+}
+
+<h2>Admin_View_Movies</h2>
+
+<table>
+    <tr>
+        <td>
+            M_id
+        </td>
+        <td>
+            File Name
+        </td>
+        @*<td>
+            File
+        </td>*@
+
+    </tr>
+
+    @foreach (var s in Model)
+    {
+        <tr>
+            <td>@s.A_id</td>
+            <td>
+            <td><a href="@s.A_file" id="btn" @*data-id="@s.M_Id" data-toggle="modal" data-target=".bs-example-modal-sm" class="my"*@>@s.A_filename</a></td>
+
+
+            <td>
+                <a href="/adminNew/DeleteArts/@s.A_id">Delete</a>
+                @*<a href="/adminNew/UpdateImage/@s.M_id">Update</a>*@
+            </td>
+        </tr>
+    }
+</table>

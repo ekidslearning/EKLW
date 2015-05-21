@@ -1,0 +1,118 @@
+﻿@model Final_Project.Models.User
+
+@{
+    ViewBag.Title = "Update";
+}
+<html>
+<head>
+    <title></title>
+
+    <meta http-equiv="content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <style>
+        .p1 {
+            padding-top: 10px;
+        }
+
+        .adm {
+            padding-top: 10px;
+        }
+    </style>
+
+</head>
+
+<body class="main">
+    <!--wrapper starts-->
+    <div class="wrapper">
+        <!--header starts-->
+        <!--header ends-->
+        <!--main starts-->
+        <div id="main">
+            <section class="fullwidth-background turquoise-plain-bg">
+                <!--container starts-->
+                <div class="container">
+                    <h2 class="dt-sc-hr-white-title">Parent's Profile</h2>
+
+
+
+
+                    <h2>Update</h2>
+
+
+
+                    @*@using (Html.BeginForm()) {*@
+                    <form action="/Services/UpdateConfirm/@Model.U_Id" method="post">
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true)
+
+                        <fieldset>
+                            <legend>User</legend>
+
+                            @*<div class="editor-label">
+                                    @Html.LabelFor(model => model.U_Id)
+                                </div>
+                                <div class="editor-field">
+                                    @Html.EditorFor(model => model.U_Id)
+                                    @Html.ValidationMessageFor(model => model.U_Id)
+                                </div>*@
+
+                            <div class="editor-label">
+                                @Html.LabelFor(model => model.UserName)
+                            </div>
+                            <div class="editor-field">
+                                @Html.EditorFor(model => model.UserName)
+                                @Html.ValidationMessageFor(model => model.UserName)
+                            </div>
+
+                            <div class="editor-label">
+                                @Html.LabelFor(model => model.Password)
+                            </div>
+                            <div class="editor-field">
+                                @Html.EditorFor(model => model.Password)
+                                @Html.ValidationMessageFor(model => model.Password)
+                            </div>
+
+                            @*<div class="editor-label">
+                                    @Html.LabelFor(model => model.Role)
+                                </div>
+                                <div class="editor-field">
+                                    @Html.EditorFor(model => model.Role)
+                                    @Html.ValidationMessageFor(model => model.Role)
+                                </div>*@
+
+                            @*<div class="editor-label">
+                                    @Html.LabelFor(model => model.UImage)
+                                </div>*@
+                            @*<div class="editor-field">
+                                    @Html.EditorFor(model => model.UImage)
+                                    @Html.ValidationMessageFor(model => model.UImage)
+                                </div>*@
+
+                            <p>
+                                <input type="submit" value="Save" />
+                            </p>
+                        </fieldset>
+                    </form>
+
+                    <div>
+                        @Html.ActionLink("Back to Home", "Parent")
+                    </div>
+                    <p>.</p>
+                    <p>.</p>
+
+
+                </div>
+                <!--container ends-->
+            </section>
+        </div>
+        <!--main ends-->
+        <!--footer starts-->
+        <!--footer ends-->
+
+    </div>
+    <!--wrapper ends-->
+    <a href="services.html" title="Go to Top" class="back-to-top">To Top ↑</a>
+    <!--Java Scripts-->
+</body>
+</html>

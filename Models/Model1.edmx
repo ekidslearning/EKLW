@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Database1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Arts">
+          <Key>
+            <PropertyRef Name="A_id" />
+          </Key>
+          <Property Name="A_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="A_filename" Type="nvarchar" MaxLength="50" />
+          <Property Name="A_file" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="English">
+          <Key>
+            <PropertyRef Name="E_id" />
+          </Key>
+          <Property Name="E_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="E_filename" Type="nvarchar" MaxLength="50" />
+          <Property Name="E_file" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="GK">
+          <Key>
+            <PropertyRef Name="GK_id" />
+          </Key>
+          <Property Name="GK_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GK_filename" Type="nvarchar" MaxLength="50" />
+          <Property Name="GK_file" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Image">
+          <Key>
+            <PropertyRef Name="M_id" />
+          </Key>
+          <Property Name="M_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Image1" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Mathematics">
+          <Key>
+            <PropertyRef Name="Ma_id" />
+          </Key>
+          <Property Name="Ma_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ma_filename" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ma_file" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Movies">
+          <Key>
+            <PropertyRef Name="M_Id" />
+          </Key>
+          <Property Name="M_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Movie" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Reg_User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Conpassword" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Uimage" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="U_Id" />
+          </Key>
+          <Property Name="U_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Role" Type="varchar" MaxLength="50" />
+          <Property Name="UImage" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityContainer Name="Database1ModelStoreContainer">
+          <EntitySet Name="Arts" EntityType="Self.Arts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="English" EntityType="Self.English" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GK" EntityType="Self.GK" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Image" EntityType="Self.Image" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mathematics" EntityType="Self.Mathematics" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Movies" EntityType="Self.Movies" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reg_User" EntityType="Self.Reg_User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Database1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Art">
+          <Key>
+            <PropertyRef Name="A_id" />
+          </Key>
+          <Property Name="A_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="A_filename" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="A_file" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="English">
+          <Key>
+            <PropertyRef Name="E_id" />
+          </Key>
+          <Property Name="E_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="E_filename" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="E_file" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="GK">
+          <Key>
+            <PropertyRef Name="GK_id" />
+          </Key>
+          <Property Name="GK_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GK_filename" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GK_file" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Image">
+          <Key>
+            <PropertyRef Name="M_id" />
+          </Key>
+          <Property Name="M_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Image1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Mathematic">
+          <Key>
+            <PropertyRef Name="Ma_id" />
+          </Key>
+          <Property Name="Ma_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ma_filename" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ma_file" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Movy">
+          <Key>
+            <PropertyRef Name="M_Id" />
+          </Key>
+          <Property Name="M_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Movie" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Reg_User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Conpassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Uimage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="U_Id" />
+          </Key>
+          <Property Name="U_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UImage" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="Database1Entities3" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Arts" EntityType="Self.Art" />
+          <EntitySet Name="Englishes" EntityType="Self.English" />
+          <EntitySet Name="GKs" EntityType="Self.GK" />
+          <EntitySet Name="Images" EntityType="Self.Image" />
+          <EntitySet Name="Mathematics" EntityType="Self.Mathematic" />
+          <EntitySet Name="Movies" EntityType="Self.Movy" />
+          <EntitySet Name="Reg_User" EntityType="Self.Reg_User" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Database1ModelStoreContainer" CdmEntityContainer="Database1Entities3">
+          <EntitySetMapping Name="Arts">
+            <EntityTypeMapping TypeName="Database1Model.Art">
+              <MappingFragment StoreEntitySet="Arts">
+                <ScalarProperty Name="A_id" ColumnName="A_id" />
+                <ScalarProperty Name="A_filename" ColumnName="A_filename" />
+                <ScalarProperty Name="A_file" ColumnName="A_file" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Englishes">
+            <EntityTypeMapping TypeName="Database1Model.English">
+              <MappingFragment StoreEntitySet="English">
+                <ScalarProperty Name="E_id" ColumnName="E_id" />
+                <ScalarProperty Name="E_filename" ColumnName="E_filename" />
+                <ScalarProperty Name="E_file" ColumnName="E_file" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GKs">
+            <EntityTypeMapping TypeName="Database1Model.GK">
+              <MappingFragment StoreEntitySet="GK">
+                <ScalarProperty Name="GK_id" ColumnName="GK_id" />
+                <ScalarProperty Name="GK_filename" ColumnName="GK_filename" />
+                <ScalarProperty Name="GK_file" ColumnName="GK_file" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Images">
+            <EntityTypeMapping TypeName="Database1Model.Image">
+              <MappingFragment StoreEntitySet="Image">
+                <ScalarProperty Name="M_id" ColumnName="M_id" />
+                <ScalarProperty Name="Image1" ColumnName="Image1" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mathematics">
+            <EntityTypeMapping TypeName="Database1Model.Mathematic">
+              <MappingFragment StoreEntitySet="Mathematics">
+                <ScalarProperty Name="Ma_id" ColumnName="Ma_id" />
+                <ScalarProperty Name="Ma_filename" ColumnName="Ma_filename" />
+                <ScalarProperty Name="Ma_file" ColumnName="Ma_file" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Movies">
+            <EntityTypeMapping TypeName="Database1Model.Movy">
+              <MappingFragment StoreEntitySet="Movies">
+                <ScalarProperty Name="M_Id" ColumnName="M_Id" />
+                <ScalarProperty Name="Movie" ColumnName="Movie" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reg_User">
+            <EntityTypeMapping TypeName="Database1Model.Reg_User">
+              <MappingFragment StoreEntitySet="Reg_User">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Conpassword" ColumnName="Conpassword" />
+                <ScalarProperty Name="Uimage" ColumnName="Uimage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="Database1Model.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="U_Id" ColumnName="U_Id" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="UImage" ColumnName="UImage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

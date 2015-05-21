@@ -1,0 +1,68 @@
+﻿@model IEnumerable<Final_Project.Models.Image>
+@{
+    ViewBag.Title = "Images";
+}
+
+<h2>Images</h2>
+
+
+<table>
+    @*<tr>
+        <td>
+            I_id
+        </td>
+        <td>
+            ImageName
+        </td>
+
+    </tr>*@
+
+    @foreach (var s in Model)
+    {
+        <tr>
+            
+            <td><div class="dt-sc-pricing-table">
+    <div class="column dt-sc-one-fourth first">
+        <div class="dt-sc-pr-tb-col mustard">
+            <div class="dt-sc-tb-header">
+                <div class="dt-sc-tb-header-img">
+                    <img src="mickey.png" alt="" title="">
+                </div>
+                <div class="dt-sc-tb-title">
+                    <h5>Painting</h5>
+                </div>
+                <div class="dt-sc-price">
+
+                    <img src="@s.Image1" />
+                </div>
+            </div>
+            @*<ul class="dt-sc-tb-content">
+                    <li>5 Innovations</li>
+                        <li>Indoor Activity</li>
+                        <li>Outdoor Activity</li>
+                        <li>Study Schedule</li>
+                        <li>Junior Kids</li>
+                </ul>*@
+            <div class="dt-sc-buy-now"> <a class="dt-sc-button small mustard" target="_blank" href=""> View All </a> </div>
+        </div>
+    </div>
+</div></td>
+
+            @*<td>
+                <a href="/adminNew/DeleteNew/@s.U_Id">Delete</a>
+                <a href="/adminNew/Update/@s.U_Id">Update</a>
+            </td>*@
+        </tr>
+        
+        
+        
+        
+        
+        
+    }
+
+
+
+
+</table>
+

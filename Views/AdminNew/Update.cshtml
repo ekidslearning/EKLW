@@ -1,0 +1,15 @@
+﻿@model Final_Project.Models.User
+
+@{
+    ViewBag.Title = "Update";
+}
+
+<h2>Update</h2>
+
+<form action="/AdminNew/UpdateConfirm/@Model.U_Id" method="post">
+    UserName <input type="text" value="@Model.UserName" name="u"/>
+    Password <input type="text" value="@Model.Password" name="p"/>
+    Role <input type="text"  value="@Model.Role" name="r"/>
+    <input type="submit" value="Update" />
+
+</form>
